@@ -1,17 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 import './Header.css';
+import Logo from '../Logo/Logo';
+import NavigationItems from '../NavigationItems/NavigationItems';
+import DrawerToggle from '../DrawerToggle/DrawerToggle';
 
-class Header extends Component{
-    
+const header = ( props ) => (
+    <header className="Header">
+        <DrawerToggle clicked={props.drawerToggleClicked} />
+        <div className="Logo">
+            <Logo />
+        </div>
+        <nav className="DesktopOnly">
+            <NavigationItems isAuthenticated={props.isAuth} />
+        </nav>
+    </header>
+);
 
-    render(){
-
-        return(
-            <div className="Header">
-            
-            </div>
-        ) 
-    }
-    
-}
-export default Header;
+export default header;
