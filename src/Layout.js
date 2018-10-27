@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
-import SideDrawer from './SideDrawer/SideDrawer';
+import SideDrawer from './UI/SideDrawer/SideDrawer';
+import Aux from './Aux/Aux';
+import Music from './Music/Music';
+
+import classes from './Layout.css';
 class Layout extends Component {
     state = {
         showSideDrawer: false
@@ -27,7 +31,8 @@ class Layout extends Component {
                     isAuth={this.props.isAuthenticated}
                     open={this.state.showSideDrawer}
                     closed={this.sideDrawerClosedHandler} />
-                <main className="Content">
+                    <Music/>
+                <main className={classes.Content}>
                     {this.props.children}
                 </main>
             </Aux>

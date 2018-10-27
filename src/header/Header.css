@@ -1,16 +1,18 @@
 .Header {
-    height: 56px;
+    height: 76px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #703B09;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 0 0 25px;
     box-sizing: border-box;
     z-index: 90;
+    align-items: right;
+
 }
 
 .Header nav {
@@ -23,6 +25,14 @@
 
 @media (max-width: 499px) {
     .DesktopOnly {
+        display: none;
+    }
+    .Header{
+        padding: 0 10px 0 10px;
+        height: 56px;
+        
+    }
+    .Logo {
         display: none;
     }
 }

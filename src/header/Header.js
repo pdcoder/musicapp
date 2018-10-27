@@ -1,18 +1,20 @@
 import React from 'react';
 
-import './Header.css';
-import Logo from '../Logo/Logo';
-import NavigationItems from '../NavigationItems/NavigationItems';
+import classes from './Header.css';
+import Logo from '../UI/Logo/Logo';
+import NavigationItems from '../UI/NavigationItems/NavigationItems';
 import DrawerToggle from '../DrawerToggle/DrawerToggle';
-
+import Search from '../UI/Search/Search';
 const header = ( props ) => (
-    <header className="Header">
+    <header className={classes.Header}>
         <DrawerToggle clicked={props.drawerToggleClicked} />
-        <div className="Logo">
+        
+        <div className={classes.Logo}>
             <Logo />
-        </div>
-        <nav className="DesktopOnly">
-            <NavigationItems isAuthenticated={props.isAuth} />
+        </div> 
+        <Search />
+        <nav className={classes.DesktopOnly}>
+            <NavigationItems  />
         </nav>
     </header>
 );
