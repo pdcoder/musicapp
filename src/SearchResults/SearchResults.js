@@ -3,29 +3,17 @@ import axios from 'axios';
 import Card from '../List/Card';
 
 
-class Music extends Component{
+class SearchResult extends Component{
     constructor(props) {
         super(props);
         this.state = {
           api:'d3ca2436f2f1113c59d99859c5ae4d00',
-          count: 5,
-          sort: 'created: asc',
-          results: []
+          results: this.props.results
         };
       }
 
-      componentDidMount() {
-        if(this.props.params.search)
-       
-    axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${this.state.api}`)
-    .then(datas => {
-        this.setState({results:datas.data.results});
-        console.log("Yippeee");
-
-    })
-    .catch(err => console.log(err));
-   
-};
+     
+    
 
 
    render(){
@@ -44,4 +32,4 @@ class Music extends Component{
 }
 
 
-export default Music;
+export default SearchResult;
